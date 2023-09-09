@@ -1,5 +1,7 @@
 package design.patterns.creational.abstractfactory;
 
+// https://www.youtube.com/watch?v=QNpwWkdFvgQ
+
 public class AbstractFactoryPatternDemo {
   public static void main(String[] args){
     Shop msiShop = new MsiShop();

@@ -5,6 +5,7 @@ import design.patterns.creational.abstractfactory.gpu.MsiGpu;
 import design.patterns.creational.abstractfactory.monitor.Monitor;
 import design.patterns.creational.abstractfactory.monitor.MsiMonitor;
 
+// concrete factory
 public class MsiShop extends Shop {
 
   @Override
