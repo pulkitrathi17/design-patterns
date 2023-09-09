@@ -1,4 +1,4 @@
-package design.patterns.creational.factory;
+package design.patterns.creational.simplefactory;
 
 public class NonVegBurger implements Burger{
 

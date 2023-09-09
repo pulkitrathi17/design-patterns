@@ -1,4 +1,4 @@
-package design.patterns.creational.factory;
+package design.patterns.creational.simplefactory;
 
 // https://www.youtube.com/watch?v=EdFq_JIThqM
 
