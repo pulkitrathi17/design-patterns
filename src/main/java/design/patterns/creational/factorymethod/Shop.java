@@ -7,6 +7,6 @@ public abstract class Shop {
     return gpu;
   }
 
-  // this is out factory method
+  // this is our factory method
   abstract Gpu createGpu();
 }
