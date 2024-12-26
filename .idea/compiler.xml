@@ -8,11 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="javaExamples" />
+        <module name="design_patterns" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="design_patterns" options="-parameters" />
       <module name="javaExamples" options="-parameters" />
     </option>
   </component>
