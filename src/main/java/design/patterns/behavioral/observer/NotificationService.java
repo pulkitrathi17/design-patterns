@@ -5,6 +5,7 @@ import design.patterns.behavioral.observer.listerners.EventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+// subject
 public class NotificationService {
 
   List<EventListener> list = new ArrayList<>();

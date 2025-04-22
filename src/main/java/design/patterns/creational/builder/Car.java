@@ -7,11 +7,11 @@ public class Car {
   int dimension;
 
   // private constructor to make sure only builder is used to create object
-  private Car(int num, String model, String color, int dimension) {
-    this.num = num;
-    this.model = model;
-    this.color = color;
-    this.dimension = dimension;
+  private Car(CarBuilder carBuilder) {
+    this.num = carBuilder.num;
+    this.model = carBuilder.model;
+    this.color = carBuilder.color;
+    this.dimension = carBuilder.dimension;
   }
 
   void show(){
@@ -26,6 +26,11 @@ public class Car {
     private String model;
     private String color;
     private int dimension;
+
+    public static CarBuilder newInstance()
+    {
+      return new CarBuilder();
+    }
 
     public CarBuilder num(int num) {
       this.num = num;
@@ -48,7 +53,7 @@ public class Car {
     }
 
     public Car build(){
-      return new Car(num, model, color, dimension);
+      return new Car(this);
     }
   }
 
