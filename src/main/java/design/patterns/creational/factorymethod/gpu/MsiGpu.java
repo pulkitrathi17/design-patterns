@@ -1,4 +1,4 @@
-package design.patterns.creational.factorymethod;
+package design.patterns.creational.factorymethod.gpu;
 
 public class MsiGpu implements Gpu {
 

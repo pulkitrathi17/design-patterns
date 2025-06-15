@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="javaExamples" />
         <module name="design_patterns" />
+        <module name="design-patterns" />
       </profile>
     </annotationProcessing>
   </component>

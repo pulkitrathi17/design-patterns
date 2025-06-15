@@ -3,7 +3,7 @@ package design.patterns.creational.singleton;
 // https://www.youtube.com/watch?v=tSZn4wkBIu8
 
 public class SingletonClass {
-  // volatile to make object read thread safe
+  // volatile to make object read thread safe - Forces the Java Virtual Machine (JVM) to always read from and write to the main memory, bypassing thread-local caches
   // static
   private volatile static SingletonClass instance;
 

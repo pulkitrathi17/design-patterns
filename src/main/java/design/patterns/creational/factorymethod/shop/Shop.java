@@ -1,10 +1,11 @@
-package design.patterns.creational.factorymethod;
+package design.patterns.creational.factorymethod.shop;
+
+import design.patterns.creational.factorymethod.gpu.Gpu;
 
 public abstract class Shop {
-  public Gpu assembleGpu(){
+  public void assembleGpu(){
     Gpu gpu = createGpu();
     gpu.assemble();
-    return gpu;
   }
 
   // this is our factory method

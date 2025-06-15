@@ -1,4 +1,4 @@
-package design.patterns.creational.abstractfactory;
+package design.patterns.creational.abstractfactory.shop;
 
 import design.patterns.creational.abstractfactory.gpu.Gpu;
 import design.patterns.creational.abstractfactory.gpu.MsiGpu;

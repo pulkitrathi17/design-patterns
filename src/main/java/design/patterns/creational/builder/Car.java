@@ -19,18 +19,13 @@ public class Car {
   }
 
   // static builder class because if you make the builder class non-static (i.e., remove the static keyword),
-  // you would need to create an instance of the outer class before creating an instance of the builder.
-  // In this case, you would use it like this: new Car().new CarBuilder().build().
+  // you would need to create an instance of builder class explicitly with new Car class object creation.
+  // In that case, you would use it something like this: new Car().new CarBuilder().build()
   public static class CarBuilder {
     private int num;
     private String model;
     private String color;
     private int dimension;
-
-    public static CarBuilder newInstance()
-    {
-      return new CarBuilder();
-    }
 
     public CarBuilder num(int num) {
       this.num = num;
