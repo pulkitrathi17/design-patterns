@@ -9,7 +9,7 @@ public class User {
         this.mediator = mediator;
     }
 
-    void receive(String message) {
+    void receiveMessage(String message) {
         System.out.println(message);
     }
 

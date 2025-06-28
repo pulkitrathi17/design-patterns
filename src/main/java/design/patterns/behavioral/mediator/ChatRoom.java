@@ -9,7 +9,7 @@ public class ChatRoom implements ChatMediator {
     public void sendMessage(String message, User sender) {
         for(User user : users) {
             if(sender.name != user.name) {
-                user.receive(message);
+                user.receiveMessage(message);
             }
         }
     }
