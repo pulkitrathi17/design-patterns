@@ -51,3 +51,4 @@ These patterns are frequently asked in coding interviews and system design round
 ---
 
 **Youtube playlist:** https://www.youtube.com/watch?v=mE3qTp1TEbg&list=PLlsmxlJgn1HJpa28yHzkBmUY-Ty71ZUGc&index=1
+**ChatGPT chat:** https://chatgpt.com/share/686ac084-cbc4-8003-9e4f-e785d1886284
