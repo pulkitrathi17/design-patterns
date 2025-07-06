@@ -19,8 +19,8 @@ Structure (Participants)
     - ConcreteAggregate (Collection Class): Implements createIterator() to return an iterator for the collection.
 */
 
-import design.patterns.behavioral.iterator.iterator.*;
-import design.patterns.behavioral.iterator.iteratorcollection.*;
+import design.patterns.behavioral.iterator.iterator.Iterator;
+import design.patterns.behavioral.iterator.iteratorcollection.BinaryTree;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package design.patterns.behavioral.iterator.iterator;
 
-import design.patterns.behavioral.iterator.*;
-import java.util.*;
+import design.patterns.behavioral.iterator.TreeNode;
+import java.util.Stack;
 
 public class PreOrderIterator<T> implements Iterator<T> {
     private Stack<TreeNode<T>> stack = new Stack<>();

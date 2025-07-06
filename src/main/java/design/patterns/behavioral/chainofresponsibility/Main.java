@@ -1,6 +1,8 @@
 package design.patterns.behavioral.chainofresponsibility;
 
-import design.patterns.behavioral.chainofresponsibility.handler.*;
+import design.patterns.behavioral.chainofresponsibility.handler.FirstHandler;
+import design.patterns.behavioral.chainofresponsibility.handler.Handler;
+import design.patterns.behavioral.chainofresponsibility.handler.SecondHandler;
 
 /*
 The Chain of Responsibility Pattern is a behavioral design pattern that allows an event or request to be passed along a chain of handlers until one of them handles it.

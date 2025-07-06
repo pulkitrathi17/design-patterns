@@ -1,6 +1,6 @@
 package design.patterns.behavioral.strategy;
 
-import design.patterns.behavioral.strategy.strategy.*;
+import design.patterns.behavioral.strategy.strategy.PaymentStrategy;
 
 public class ShoppingCart {
     PaymentStrategy paymentStrategy;

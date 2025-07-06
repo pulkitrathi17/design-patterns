@@ -1,6 +1,6 @@
 package design.patterns.behavioral.state.state;
 
-import design.patterns.behavioral.state.*;
+import design.patterns.behavioral.state.Phone;
 
 public class OffState extends State {
 

@@ -1,6 +1,7 @@
 package design.patterns.behavioral.mediator;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChatRoom implements ChatMediator {
     List<User> users = new ArrayList<>();

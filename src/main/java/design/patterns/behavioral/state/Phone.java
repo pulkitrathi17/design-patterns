@@ -1,7 +1,9 @@
 package design.patterns.behavioral.state;
 
-import design.patterns.behavioral.state.state.*;
-import lombok.*;
+import design.patterns.behavioral.state.state.OffState;
+import design.patterns.behavioral.state.state.State;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter

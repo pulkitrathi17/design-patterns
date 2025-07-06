@@ -28,9 +28,11 @@ UML:
 
 */
 
-import design.patterns.behavioral.interpreter.expression.*;
-import design.patterns.behavioral.interpreter.expression.nonterminalexpression.*;
-import design.patterns.behavioral.interpreter.expression.terminalexpression.*;
+import design.patterns.behavioral.interpreter.expression.Expression;
+import design.patterns.behavioral.interpreter.expression.nonterminalexpression.AndExpression;
+import design.patterns.behavioral.interpreter.expression.nonterminalexpression.NotExpression;
+import design.patterns.behavioral.interpreter.expression.nonterminalexpression.OrExpression;
+import design.patterns.behavioral.interpreter.expression.terminalexpression.BooleanExpression;
 
 public class Main {
     public static void main(String[] args) {

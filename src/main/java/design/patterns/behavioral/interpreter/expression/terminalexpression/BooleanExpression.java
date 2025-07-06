@@ -1,6 +1,6 @@
 package design.patterns.behavioral.interpreter.expression.terminalexpression;
 
-import design.patterns.behavioral.interpreter.expression.*;
+import design.patterns.behavioral.interpreter.expression.Expression;
 
 public class BooleanExpression implements Expression {
     private final boolean value;

@@ -12,7 +12,9 @@ Structure (Participants)
     - Context                            : Holds a reference to a Strategy object and delegates the behavior to the strategy.
 */
 
-import design.patterns.behavioral.strategy.strategy.*;
+import design.patterns.behavioral.strategy.strategy.CreditCardPayment;
+import design.patterns.behavioral.strategy.strategy.PayPalPayment;
+import design.patterns.behavioral.strategy.strategy.PaymentStrategy;
 
 public class Main {
     public static void main(String[] args) {

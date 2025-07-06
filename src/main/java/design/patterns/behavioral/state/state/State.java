@@ -1,6 +1,6 @@
 package design.patterns.behavioral.state.state;
 
-import design.patterns.behavioral.state.*;
+import design.patterns.behavioral.state.Phone;
 
 // abstract class instead of interface to define a function here in case its functionality is same in all states
 public abstract class State {

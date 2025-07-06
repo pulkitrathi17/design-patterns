@@ -1,7 +1,6 @@
 package design.patterns.behavioral.observer;
 
 import design.patterns.behavioral.observer.listerners.EventListener;
-
 import java.util.ArrayList;
 import java.util.List;
 

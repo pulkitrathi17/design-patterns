@@ -1,7 +1,5 @@
 package design.patterns.behavioral.observer.listerners;
 
-import design.patterns.behavioral.observer.listerners.EventListener;
-
 public class MobileAppListener implements EventListener {
 
   String number;

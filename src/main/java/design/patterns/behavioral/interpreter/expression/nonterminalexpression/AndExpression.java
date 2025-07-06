@@ -1,6 +1,6 @@
 package design.patterns.behavioral.interpreter.expression.nonterminalexpression;
 
-import design.patterns.behavioral.interpreter.expression.*;
+import design.patterns.behavioral.interpreter.expression.Expression;
 
 public class AndExpression implements Expression {
     private final Expression left;

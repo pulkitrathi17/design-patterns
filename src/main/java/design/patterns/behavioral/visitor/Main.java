@@ -43,9 +43,11 @@ UML(Unified Modeling Language):
 
 */
 
-import design.patterns.behavioral.visitor.element.*;
-import design.patterns.behavioral.visitor.visitor.*;
-import java.util.*;
+import design.patterns.behavioral.visitor.element.DirectoryElement;
+import design.patterns.behavioral.visitor.element.Element;
+import design.patterns.behavioral.visitor.element.FileElement;
+import design.patterns.behavioral.visitor.visitor.SizeAndDirectoryCounterVisitor;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
