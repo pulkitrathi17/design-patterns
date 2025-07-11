@@ -6,6 +6,11 @@ public class CarVehicle extends Vehicle {
 
   public CarVehicle(){ }
 
+  public CarVehicle(Integer id, String name, Integer trunkSize){
+    super(id, name);
+    this.trunkSize = trunkSize;
+  }
+
   public CarVehicle(CarVehicle carVehicle) {
     super(carVehicle);
     this.trunkSize = carVehicle.trunkSize;

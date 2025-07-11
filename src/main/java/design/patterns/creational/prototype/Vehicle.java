@@ -6,6 +6,11 @@ public abstract class Vehicle{
 
     public Vehicle(){ }
 
+    public Vehicle(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Vehicle(Vehicle vehicle){
       this.id = vehicle.id;
       this.name = vehicle.name;
