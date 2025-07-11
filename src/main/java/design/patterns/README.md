@@ -22,33 +22,32 @@ Many patterns overlap in purpose, leading to confusion. This guide clarifies **w
 
 ---
 
-# 💡 When to Use Which Pattern
+# 💡 Cheat Sheet
 
-| **Scenario (When to Use)**                                             | **Design Pattern**      | **Explanation**                                            | **Example Use Case**                                     |
-| ---------------------------------------------------------------------- | ----------------------- | ---------------------------------------------------------- | -------------------------------------------------------- |
-| Need to select algorithm at runtime                                    | Strategy                | Encapsulate interchangeable algorithms or behaviors        | Sorting with different strategies (quick, merge, heap)   |
-| Object needs to change behavior based on internal state dynamically    | State                   | Encapsulate state-specific behavior, avoiding conditionals | TCP connection state (Open, Closed, Listening)           |
-| Add functionalities to objects dynamically without subclassing         | Decorator               | Wrap objects to extend behavior flexibly                   | Adding compression/encryption to data streams            |
-| Control, enhance, or protect access to another object transparently    | Proxy                   | Surrogate controlling access, caching, or remoting         | Virtual proxy for image loading, API rate-limiting proxy |
-| Need to work with incompatible interfaces                              | Adapter                 | Convert one interface to another                           | Adapting legacy payment gateway to a new system          |
-| Provide a unified, simplified interface to a complex subsystem         | Facade                  | Simplify usage of complex subsystems                       | Simplified API for a multimedia subsystem                |
-| Ensure a single instance globally with controlled access               | Singleton               | Restrict class to a single instance with global access     | Logger, configuration manager                            |
-| Represent part-whole hierarchies in tree structures                    | Composite               | Treat individual objects and compositions uniformly        | GUI frameworks, file directory structures                |
-| Encapsulate a request, allowing undo/redo and parameterization         | Command                 | Encapsulate requests as objects                            | Text editor undo/redo stack                              |
-| Allow a request to be passed along a chain until handled               | Chain of Responsibility | Decouple sender and receiver with multiple handlers        | Logging frameworks, HTTP request middleware              |
-| Notify multiple dependents automatically when an object changes state  | Observer                | One-to-many dependency for event updates                   | Event listeners in GUIs, pub-sub systems                 |
-| Centralize complex communication between multiple objects              | Mediator                | Avoid direct references, reduce complexity between objects | Chatroom handling user messages, UI widget coordination  |
-| Construct complex objects step-by-step                                 | Builder                 | Incrementally build complex objects with flexibility       | Building complex documents or JSON objects               |
-| Create object copies efficiently without depending on class hierarchy  | Prototype               | Clone existing objects for new instances                   | Copying objects in a drawing editor                      |
-| Let subclasses decide which class to instantiate                       | Factory Method          | Defer instantiation to subclasses                          | Creating different types of documents in an app          |
-| Create families of related objects without specifying concrete classes | Abstract Factory        | Provide interface for creating related families            | GUI toolkit supporting multiple themes                   |
-| Parse and evaluate custom expressions or DSLs                          | Interpreter             | Represent grammar and interpret sentences                  | Evaluating arithmetic expressions, regex engines         |
-| Perform operations on object structures without modifying them         | Visitor                 | Separate algorithm from object structure                   | Applying operations on file system structures            |
-| Define skeleton of an algorithm with steps overridden by subclasses    | Template Method         | Base algorithm with overridable steps                      | Sorting frameworks with customizable comparison logic    |
-| Traverse collections without exposing their underlying structure       | Iterator                | Sequentially access elements transparently                 | Iterating over collections or custom aggregates          |
-| Capture and restore an object's state easily (undo functionality)      | Memento                 | Save and restore state without violating encapsulation     | Game save/load systems, undo functionality               |
-| Optimize memory by sharing large numbers of similar objects            | Flyweight               | Share objects to reduce memory footprint                   | Sharing character glyph objects in a text editor         |
-
+| **Design Pattern**          | **When to Use**                                      | **How to Implement**                                                                                               | **Example Use Case**                     |
+| --------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------- |
+| **Strategy**                | Need to select algorithm at runtime                  | - Create an interface for the algorithm<br>- Implement concrete strategies<br>- Inject strategy at runtime         | Sorting with different strategies        |
+| **State**                   | Object behavior changes with state dynamically       | - Encapsulate states in classes<br>- Context holds current state<br>- Delegate behavior to current state           | TCP connection states                    |
+| **Decorator**               | Dynamically add responsibilities without subclassing | - Create a wrapper implementing the same interface<br>- Add behavior before/after delegating to the wrapped object | Adding compression/encryption to streams |
+| **Proxy**                   | Control, enhance, or protect access transparently    | - Create a proxy implementing the same interface<br>- Delegate calls with additional control logic                 | Virtual proxy for image loading          |
+| **Adapter**                 | Work with incompatible interfaces                    | - Create a wrapper converting Interface A to Interface B<br>- Translate requests in the wrapper                    | Adapting legacy payment gateway          |
+| **Facade**                  | Simplify complex subsystem usage                     | - Create a class exposing a simplified interface<br>- Internally call methods on multiple subsystems               | Simplified API for multimedia            |
+| **Singleton**               | Single global instance with controlled access        | - Private constructor<br>- Static instance field<br>- Public static getInstance()                                  | Logger, configuration manager            |
+| **Composite**               | Represent part-whole hierarchies uniformly           | - Create a component interface<br>- Leaves and composites implement it<br>- Composite holds and manages children   | File directory structure                 |
+| **Command**                 | Encapsulate request, enable undo/redo                | - Create Command interface with execute/undo<br>- Encapsulate actions in command objects                           | Text editor undo stack                   |
+| **Chain of Responsibility** | Pass request across multiple handlers                | - Handlers implement a handler interface<br>- Each handler has a setNext()<br>- Handle or pass to the next         | Logging, middleware pipelines            |
+| **Observer**                | Notify dependents when state changes                 | - Subject maintains observer list<br>- Notifies observers on state change                                          | GUI event listeners, pub-sub             |
+| **Mediator**                | Centralize complex object communication              | - Create mediator to manage communication<br>- Colleagues communicate via mediator                                 | Chatroom message routing                 |
+| **Builder**                 | Build complex objects step-by-step                   | - Builder class with step methods<br>- Return final object with build()                                            | Building complex documents               |
+| **Prototype**               | Clone objects efficiently                            | - Implement clone() method<br>- Add copy constructor to copy fields                                                | Cloning objects in a drawing app         |
+| **Factory Method**          | Let subclasses decide instantiation                  | - Create interface with factory method<br>- Subclasses implement instantiation logic                               | Document creation in editors             |
+| **Abstract Factory**        | Create families of related objects                   | - Define an interface for creating related objects<br>- Implement factories for each family                        | GUI toolkit with themes                  |
+| **Interpreter**             | Parse and evaluate custom expressions                | - Define grammar classes for expressions<br>- Implement interpret() recursively                                    | Evaluating arithmetic expressions        |
+| **Visitor**                 | Operate on object structure without modifying        | - Create visitor interface with visit() methods<br>- Elements implement accept(visitor)                            | File system operations                   |
+| **Template Method**         | Define algorithm skeleton with variable steps        | - Abstract class defines algorithm skeleton<br>- Subclasses override specific steps                                | Sorting frameworks with hooks            |
+| **Iterator**                | Traverse collections transparently                   | - Create iterator with hasNext() and next()<br>- Return iterator from collection                                   | Traversing collections                   |
+| **Memento**                 | Capture and restore object state                     | - Memento holds internal state<br>- Originator saves/restores state using memento                                  | Game save/load, undo functionality       |
+| **Flyweight**               | Optimize memory using shared data                    | - Separate intrinsic (shared) and extrinsic state<br>- Reuse shared instances                                      | Text editor glyph sharing                |
 
 ---
 
