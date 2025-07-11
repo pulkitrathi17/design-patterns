@@ -24,30 +24,31 @@ Many patterns overlap in purpose, leading to confusion. This guide clarifies **w
 
 # 💡 When to Use Which Pattern
 
-| **Scenario**                                    | **Design Pattern**      |
-| ----------------------------------------------- | ----------------------- |
-| Runtime algorithm selection                     | Strategy                |
-| Behavior changes by state                       | State                   |
-| Add responsibilities dynamically                | Decorator               |
-| Control access transparently                    | Proxy                   |
-| Interface incompatibility                       | Adapter                 |
-| Simplify subsystem                              | Facade                  |
-| Single instance globally                        | Singleton               |
-| Tree structures                                 | Composite               |
-| Encapsulate request and undo/redo               | Command                 |
-| Pass request across handlers                    | Chain of Responsibility |
-| Notify dependents on state change               | Observer                |
-| Centralize complex communication                | Mediator                |
-| Step-by-step complex object creation            | Builder                 |
-| Clone objects efficiently                       | Prototype               |
-| Subclass decides instantiation                  | Factory Method          |
-| Families of related objects                     | Abstract Factory        |
-| Parsing DSL/expressions                         | Interpreter             |
-| Operate on structure without modifying          | Visitor                 |
-| Skeleton with variable steps                    | Template Method         |
-| Sequential traversal without exposing structure | Iterator                |
-| Capture and restore object state                | Memento                 |
-| Optimize memory using shared data               | Flyweight               |
+| **Scenario (When to Use)**                                             | **Design Pattern**      | **Explanation**                                            | **Example Use Case**                                     |
+| ---------------------------------------------------------------------- | ----------------------- | ---------------------------------------------------------- | -------------------------------------------------------- |
+| Need to select algorithm at runtime                                    | Strategy                | Encapsulate interchangeable algorithms or behaviors        | Sorting with different strategies (quick, merge, heap)   |
+| Object needs to change behavior based on internal state dynamically    | State                   | Encapsulate state-specific behavior, avoiding conditionals | TCP connection state (Open, Closed, Listening)           |
+| Add functionalities to objects dynamically without subclassing         | Decorator               | Wrap objects to extend behavior flexibly                   | Adding compression/encryption to data streams            |
+| Control, enhance, or protect access to another object transparently    | Proxy                   | Surrogate controlling access, caching, or remoting         | Virtual proxy for image loading, API rate-limiting proxy |
+| Need to work with incompatible interfaces                              | Adapter                 | Convert one interface to another                           | Adapting legacy payment gateway to a new system          |
+| Provide a unified, simplified interface to a complex subsystem         | Facade                  | Simplify usage of complex subsystems                       | Simplified API for a multimedia subsystem                |
+| Ensure a single instance globally with controlled access               | Singleton               | Restrict class to a single instance with global access     | Logger, configuration manager                            |
+| Represent part-whole hierarchies in tree structures                    | Composite               | Treat individual objects and compositions uniformly        | GUI frameworks, file directory structures                |
+| Encapsulate a request, allowing undo/redo and parameterization         | Command                 | Encapsulate requests as objects                            | Text editor undo/redo stack                              |
+| Allow a request to be passed along a chain until handled               | Chain of Responsibility | Decouple sender and receiver with multiple handlers        | Logging frameworks, HTTP request middleware              |
+| Notify multiple dependents automatically when an object changes state  | Observer                | One-to-many dependency for event updates                   | Event listeners in GUIs, pub-sub systems                 |
+| Centralize complex communication between multiple objects              | Mediator                | Avoid direct references, reduce complexity between objects | Chatroom handling user messages, UI widget coordination  |
+| Construct complex objects step-by-step                                 | Builder                 | Incrementally build complex objects with flexibility       | Building complex documents or JSON objects               |
+| Create object copies efficiently without depending on class hierarchy  | Prototype               | Clone existing objects for new instances                   | Copying objects in a drawing editor                      |
+| Let subclasses decide which class to instantiate                       | Factory Method          | Defer instantiation to subclasses                          | Creating different types of documents in an app          |
+| Create families of related objects without specifying concrete classes | Abstract Factory        | Provide interface for creating related families            | GUI toolkit supporting multiple themes                   |
+| Parse and evaluate custom expressions or DSLs                          | Interpreter             | Represent grammar and interpret sentences                  | Evaluating arithmetic expressions, regex engines         |
+| Perform operations on object structures without modifying them         | Visitor                 | Separate algorithm from object structure                   | Applying operations on file system structures            |
+| Define skeleton of an algorithm with steps overridden by subclasses    | Template Method         | Base algorithm with overridable steps                      | Sorting frameworks with customizable comparison logic    |
+| Traverse collections without exposing their underlying structure       | Iterator                | Sequentially access elements transparently                 | Iterating over collections or custom aggregates          |
+| Capture and restore an object's state easily (undo functionality)      | Memento                 | Save and restore state without violating encapsulation     | Game save/load systems, undo functionality               |
+| Optimize memory by sharing large numbers of similar objects            | Flyweight               | Share objects to reduce memory footprint                   | Sharing character glyph objects in a text editor         |
+
 
 ---
 
@@ -105,12 +106,15 @@ Many patterns overlap in purpose, leading to confusion. This guide clarifies **w
 
 ---
 
-## Observer vs Mediator
+## Mediator vs Observer
 
-| Aspect  | Observer                    | Mediator                 |
-| ------- | --------------------------- | ------------------------ |
-| Purpose | Notify dependents on change | Centralize communication |
-| Example | Event listeners             | Chatroom mediator        |
+|                   | **Mediator Pattern**                                                                                        | **Observer Pattern**                                                                                        |
+| ----------------- |-------------------------------------------------------------------------------------------------------------| ----------------------------------------------------------------------------------------------------------- |
+| **Intent**        | Centralizes complex communication and control logic between multiple objects **(many-to-many centralized)** | Defines a **one-to-many dependency** so that when one object changes state, all its dependents are notified |
+| **Communication** | Objects communicate **via a mediator** rather than directly                                                 | Observers register with a **subject** and get **notified** on changes                                       |
+| **Decoupling**    | Decouples objects by having them communicate through the mediator                                           | Decouples subject and observers, but observers are still dependent on the subject's notifications           |
+| **Flow**          | Typically **two-way communication** via mediator                                                            | Typically **one-way push notifications** from subject to observers                                          |
+
 
 ---
 
