@@ -16,38 +16,46 @@ Many patterns overlap in purpose, leading to confusion. This guide clarifies **w
 
 # 📊 23 GoF Design Patterns At a Glance
 
-**Creational:** Singleton, Factory Method, Abstract Factory, Builder, Prototype
-**Structural:** Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy
-**Behavioral:** Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor
+**Behavioral:**
+- These patterns are concerned with object interaction and responsibility, specifically communication between objects and the delegation of responsibilities.
+- Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor
+
+**Creational:** 
+- These patterns are concerned with object creation mechanisms, trying to create objects in a manner suitable to the situation while hiding the creation logic.
+- Singleton, Factory Method, Abstract Factory, Builder, Prototype
+
+**Structural:**
+- These patterns deal with object composition, forming larger structures from classes and objects while keeping these structures flexible and efficient.
+- Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy
 
 ---
 
 # 💡 Cheat Sheet
 
-| **Design Pattern**          | **When to Use**                                      | **How to Implement**                                                                                               | **Example Use Case**                     |
-| --------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------- |
-| **Strategy**                | Need to select algorithm at runtime                  | - Create an interface for the algorithm<br>- Implement concrete strategies<br>- Inject strategy at runtime         | Sorting with different strategies        |
-| **State**                   | Object behavior changes with state dynamically       | - Encapsulate states in classes<br>- Context holds current state<br>- Delegate behavior to current state           | TCP connection states                    |
-| **Decorator**               | Dynamically add responsibilities without subclassing | - Create a wrapper implementing the same interface<br>- Add behavior before/after delegating to the wrapped object | Adding compression/encryption to streams |
-| **Proxy**                   | Control, enhance, or protect access transparently    | - Create a proxy implementing the same interface<br>- Delegate calls with additional control logic                 | Virtual proxy for image loading          |
-| **Adapter**                 | Work with incompatible interfaces                    | - Create a wrapper converting Interface A to Interface B<br>- Translate requests in the wrapper                    | Adapting legacy payment gateway          |
-| **Facade**                  | Simplify complex subsystem usage                     | - Create a class exposing a simplified interface<br>- Internally call methods on multiple subsystems               | Simplified API for multimedia            |
-| **Singleton**               | Single global instance with controlled access        | - Private constructor<br>- Static instance field<br>- Public static getInstance()                                  | Logger, configuration manager            |
-| **Composite**               | Represent part-whole hierarchies uniformly           | - Create a component interface<br>- Leaves and composites implement it<br>- Composite holds and manages children   | File directory structure                 |
-| **Command**                 | Encapsulate request, enable undo/redo                | - Create Command interface with execute/undo<br>- Encapsulate actions in command objects                           | Text editor undo stack                   |
-| **Chain of Responsibility** | Pass request across multiple handlers                | - Handlers implement a handler interface<br>- Each handler has a setNext()<br>- Handle or pass to the next         | Logging, middleware pipelines            |
-| **Observer**                | Notify dependents when state changes                 | - Subject maintains observer list<br>- Notifies observers on state change                                          | GUI event listeners, pub-sub             |
-| **Mediator**                | Centralize complex object communication              | - Create mediator to manage communication<br>- Colleagues communicate via mediator                                 | Chatroom message routing                 |
-| **Builder**                 | Build complex objects step-by-step                   | - Builder class with step methods<br>- Return final object with build()                                            | Building complex documents               |
-| **Prototype**               | Clone objects efficiently                            | - Implement clone() method<br>- Add copy constructor to copy fields                                                | Cloning objects in a drawing app         |
-| **Factory Method**          | Let subclasses decide instantiation                  | - Create interface with factory method<br>- Subclasses implement instantiation logic                               | Document creation in editors             |
-| **Abstract Factory**        | Create families of related objects                   | - Define an interface for creating related objects<br>- Implement factories for each family                        | GUI toolkit with themes                  |
-| **Interpreter**             | Parse and evaluate custom expressions                | - Define grammar classes for expressions<br>- Implement interpret() recursively                                    | Evaluating arithmetic expressions        |
-| **Visitor**                 | Operate on object structure without modifying        | - Create visitor interface with visit() methods<br>- Elements implement accept(visitor)                            | File system operations                   |
-| **Template Method**         | Define algorithm skeleton with variable steps        | - Abstract class defines algorithm skeleton<br>- Subclasses override specific steps                                | Sorting frameworks with hooks            |
-| **Iterator**                | Traverse collections transparently                   | - Create iterator with hasNext() and next()<br>- Return iterator from collection                                   | Traversing collections                   |
-| **Memento**                 | Capture and restore object state                     | - Memento holds internal state<br>- Originator saves/restores state using memento                                  | Game save/load, undo functionality       |
-| **Flyweight**               | Optimize memory using shared data                    | - Separate intrinsic (shared) and extrinsic state<br>- Reuse shared instances                                      | Text editor glyph sharing                |
+| **Design Pattern**          | **Pattern Type & Why**                                    | **When to Use**                                          | **How to Implement**                                                                                      | **Example Use Case**              |
+|-----------------------------| --------------------------------------------------------- | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| **Strategy**                | Behavioral (encapsulates interchangeable algorithms)      | Need to select algorithm at runtime                      | - Define algorithm interface<br>- Implement concrete strategies<br>- Inject strategy dynamically          | Sorting with different strategies |
+| **State**                   | Behavioral (changes behavior based on state)              | Object changes behavior as internal state changes        | - Create state interface<br>- Concrete states implement it<br>- Context holds current state               | TCP connection states             |
+| **Command**                 | Behavioral (encapsulates a request as an object)          | Encapsulate requests, support undo/redo                  | - Command interface with execute/undo<br>- Concrete commands encapsulate actions                          | Undo functionality                |
+| **Chain of Responsibility** | Behavioral (passes request along handlers)                | Pass request along handlers until one handles it         | - Handler interface<br>- Handlers link via setNext()<br>- Pass requests down chain                        | Middleware, logging               |
+| **Observer**                | Behavioral (defines dependency between objects)           | Notify multiple dependents when state changes            | - Subject maintains observer list<br>- Observers implement update()<br>- Notify on changes                | Event handling                    |
+| **Mediator**                | Behavioral (centralizes communication)                    | Centralize communication between objects                 | - Mediator interface<br>- Concrete mediator manages colleagues                                            | Chatroom message routing          |
+| **Interpreter**             | Behavioral (interprets grammar and expressions)           | Interpret custom grammar/expressions                     | - Grammar classes with interpret()<br>- Use recursion for evaluation                                      | Arithmetic evaluation             |
+| **Visitor**                 | Behavioral (separates operations from object structure)   | Perform operations on objects without modifying classes  | - Visitor interface with visit() for each type<br>- Elements implement accept(visitor)                    | File system operations            |
+| **Template Method**         | Behavioral (algorithm skeleton with variable steps)       | Define skeleton, let subclasses override steps           | - Abstract class defines template method<br>- Subclasses override specific steps                          | Sorting frameworks                |
+| **Iterator**                | Behavioral (sequential access without exposing structure) | Traverse collections transparently                       | - Iterator interface with hasNext()/next()<br>- Concrete iterator manages state                           | Collection traversal              |
+| **Memento**                 | Behavioral (captures and restores object state)           | Capture and restore object state safely                  | - Memento stores state<br>- Originator saves/restores<br>- Caretaker manages mementos                     | Undo, checkpoints                 |
+|  **Singleton**              | Creational (controls single instance creation)            | Ensure only one instance exists globally                 | - Private constructor<br>- Static instance field<br>- Public getInstance()                                | Logger, configuration manager     |
+| **Builder**                 | Creational (step-by-step construction)                    | Build complex objects step by step                       | - Builder class with step methods<br>- Optional director to orchestrate<br>- build() returns object       | Constructing complex objects      |
+| **Prototype**               | Creational (cloning instead of new creation)              | Clone objects efficiently without complex constructors   | - Implement clone() method<br>- Add copy constructor for deep copying                                     | Cloning shapes in editor          |
+| **Factory Method**          | Creational (subclass decides instantiation)               | Defer instantiation to subclasses                        | - Interface for product<br>- Creator defines factory method<br>- Subclasses implement creation            | Creating documents                |
+| **Abstract Factory**        | Creational (create related families together)             | Create families of related objects together              | - Interface for families<br>- Concrete factories create related objects                                   | Cross-platform UIs                |
+| **Flyweight**               | Structural (sharing to support many objects efficiently)  | Optimize memory for large numbers of similar objects     | - Separate intrinsic & extrinsic state<br>- Use factory to share instances                                | Text glyphs, particles            |
+| **Decorator**               | Structural (adds responsibilities dynamically)            | Add new responsibilities dynamically without subclassing | - Same interface for component & decorator<br>- Decorator wraps component<br>- Adds behavior before/after | Adding compression/encryption     |
+| **Proxy**                   | Structural (controls access to another object)            | Control, enhance, or defer access to a real object       | - Proxy implements same interface<br>- Holds real subject<br>- Adds access logic                          | Virtual proxy for images          |
+| **Adapter**                 | Structural (converts one interface to another)            | Bridge incompatible interfaces                           | - Adapter implements target interface<br>- Internally calls adaptee                                       | Legacy system integration         |
+| **Facade**                  | Structural (simplifies subsystem interface)               | Simplify usage of a complex subsystem                    | - Facade exposes unified methods<br>- Internally calls multiple subsystems                                | Simplified API for SDK            |
+| **Composite**               | Structural (treats part-whole hierarchies uniformly)      | Treat part and whole objects uniformly                   | - Component interface<br>- Leafs & composites implement it<br>- Composite holds children                  | File systems, UI components       |
 
 ---
 
