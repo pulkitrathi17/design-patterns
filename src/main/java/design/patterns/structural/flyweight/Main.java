@@ -1,12 +1,15 @@
 package design.patterns.structural.flyweight;
 
 /*
-The Flyweight Pattern is a structural design pattern used to minimize memory usage by sharing common parts of objects that are repeated many times.
+The Flyweight Pattern is a structural design pattern used to minimize memory usage by
+sharing common parts of objects that are repeated many times.
+
 It separates the object state into:
  - Intrinsic state: Shared, reusable, constant data
  - Extrinsic state: Varies per object, passed in from the outside
 */
-public class Demo {
+
+public class Main {
     public static void main(String[] args) {
         Forest forest = new Forest();
 

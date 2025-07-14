@@ -3,7 +3,7 @@ package design.patterns.structural.proxy;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ProxyImplementation implements Service{
+public class ProxyImplementation implements Service {
   Implementation imp;
   Map<String, String> map = new HashMap<>();
 

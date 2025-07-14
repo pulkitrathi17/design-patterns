@@ -13,10 +13,10 @@ Real-World Analogy
     - Tree traversals : We can have multiple iterators for multiple types of trees.
 
 Structure (Participants)
-    - Iterator (Interface) : Defines methods like hasNext(), next(), remove() (optional).
-    - ConcreteIterator     : Implements the Iterator interface and keeps track of the current position.
-    - Aggregate (Interface): Defines method to create an Iterator.
-    - ConcreteAggregate (Collection Class): Implements createIterator() to return an iterator for the collection.
+    - Iterator (Interface)                 : Defines methods like hasNext(), next(), remove() (optional).
+    - ConcreteIterator                     : Implements the Iterator interface and keeps track of the current position.
+    - Aggregate (Interface)                : Defines method to create an Iterator.
+    - ConcreteAggregate (Collection Class) : Implements createIterator() to return an iterator for the collection.
 */
 
 import design.patterns.behavioral.iterator.iterator.Iterator;

@@ -1,7 +1,5 @@
 package design.patterns.structural.proxy;
 
-// https://www.youtube.com/watch?v=TS5i-uPXLs8
-
 /*
 A Proxy is a class that acts as an interface to something else: another object, a resource, or a remote service.
 It wraps the real object and adds extra behavior (like logging, caching, access control, lazy loading, etc.) without changing the original object.
