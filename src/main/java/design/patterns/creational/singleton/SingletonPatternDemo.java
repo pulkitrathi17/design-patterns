@@ -9,7 +9,6 @@ public class SingletonPatternDemo {
   }
 }
 
-
 /*
 Use for a Singleton Class
 - When we only want a single instance exists for a class. For example, we don't want multiple instance of database class.
@@ -24,4 +23,9 @@ Steps to make a class Singleton
 4. Use "synchronized" keyword to make initialization thread safe
 5. Use double locking to make null checking efficient
 
- */
+OR
+
+1. Use Private constructor in SIngleton class
+2. Create a nested static util class with final static Singleton class object and initialize it using new keyword
+3. Create a getInstance method that returns the Singleton class object from nested static util class
+*/
