@@ -21,13 +21,18 @@ Properties to keep in mind:
  - Classes (including static nested classes) in Java are loaded lazily by the JVM, i.e., only when they are first used
  - A static nested class is just like a top-level class scoped inside another class. It does not get loaded when the outer class is loaded.
  - You cannot declare static fields or methods in non-static inner classes (that's why INSTANCE is static)
+ - Top level class can not be static. So, we can not make SingletonClass itself static
+ - Java's class loading mechanism ensures a class is only loaded once per classloader.
+
 */
 
 
 
 public class SingletonSimpleClass {
     // Private constructor
-    private SingletonSimpleClass() {}
+    private SingletonSimpleClass() {
+        System.out.println("SingletonSimpleClass class instantiated...");
+    }
 
     // Static nested class – loaded only when getInstance() is called. Makes lazy loading possible
     private static class SingletonSimpleUtilClass {
