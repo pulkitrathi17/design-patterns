@@ -25,7 +25,7 @@ Steps to make a class Singleton
 
 OR
 
-1. Use Private constructor in SIngleton class
+1. Use Private constructor in Singleton class
 2. Create a nested static util class with final static Singleton class object and initialize it using new keyword
 3. Create a getInstance method that returns the Singleton class object from nested static util class
 */
